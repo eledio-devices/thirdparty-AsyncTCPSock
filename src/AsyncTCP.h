@@ -124,6 +124,10 @@ class AsyncClient : public AsyncSocketBase
 
     uint8_t state() { return _conn_state; }
     bool connected();
+    bool disconnected() {
+        return !connected();
+    }
+
     bool freeable();//disconnected or disconnecting
 
     uint32_t getAckTimeout();
